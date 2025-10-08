@@ -31,10 +31,10 @@ void loop()
     // set color to red
     pixels.fill(0xFF0000);
     pixels.show();
-    delay(500); // wait half a second
+    delay(200); // wait half a second
 
     // turn off
     pixels.fill(0x000000);
     pixels.show();
-    delay(500); // wait half a second
+    delay(200); // wait half a second
 }

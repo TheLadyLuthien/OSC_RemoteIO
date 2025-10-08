@@ -29,12 +29,12 @@ void loop()
     Serial.println("Hello!");
 
     // set color to red
-    pixels.fill(0xFF0000);
+    pixels.fill(0x00FF00);
     pixels.show();
-    delay(200); // wait half a second
+    delay(100); // wait half a second
 
     // turn off
     pixels.fill(0x000000);
     pixels.show();
-    delay(200); // wait half a second
+    delay(500); // wait half a second
 }

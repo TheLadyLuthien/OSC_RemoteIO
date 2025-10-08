@@ -1,8 +1,9 @@
 {
 	"folders": [
-		{
-			"path": "firmware"
-		}
+        {
+            "name": "OSCRemoteIO",
+            "path": "firmware/OSCRemoteIO"
+        }
     ],
     "settings": {
         "circuitpythonsync.cpbaseversion": "10",

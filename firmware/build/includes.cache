@@ -1,0 +1,395 @@
+[
+  {
+    "added_include_path": "C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\3.3.1\\cores\\esp32"
+  },
+  {
+    "added_include_path": "C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\3.3.1\\variants\\adafruit_qtpy_esp32s2"
+  },
+  {
+    "compile": {
+      "source_path": "C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build\\sketch\\firmware.ino.cpp",
+      "object_path": "C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build\\sketch\\firmware.ino.cpp.o",
+      "depfile_path": "C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build\\sketch\\firmware.ino.cpp.d"
+    },
+    "compile_task": {
+      "args": [
+        "C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp-x32\\2411/bin/xtensa-esp32s2-elf-g++",
+        "-c",
+        "@C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/flags/cpp_flags",
+        "-w",
+        "-Os",
+        "-Werror=return-type",
+        "-w",
+        "-x",
+        "c++",
+        "-E",
+        "-CC",
+        "-DF_CPU=240000000L",
+        "-DARDUINO=10607",
+        "-DARDUINO_ADAFRUIT_QTPY_ESP32S2",
+        "-DARDUINO_ARCH_ESP32",
+        "-DARDUINO_BOARD=\"ADAFRUIT_QTPY_ESP32S2\"",
+        "-DARDUINO_VARIANT=\"adafruit_qtpy_esp32s2\"",
+        "-DARDUINO_PARTITION_tinyuf2-partitions-4MB-noota",
+        "-DARDUINO_HOST_OS=\"windows\"",
+        "-DARDUINO_FQBN=\"esp32:esp32:adafruit_qtpy_esp32s2:UploadSpeed=921600,CDCOnBoot=cdc,MSCOnBoot=default,DFUOnBoot=default,UploadMode=cdc,CPUFreq=240,FlashFreq=80,FlashMode=qio,FlashSize=4M,PartitionScheme=tinyuf2_noota,DebugLevel=none,PSRAM=enabled,EraseFlash=none,ZigbeeMode=default\"",
+        "-DESP32=ESP32",
+        "-DCORE_DEBUG_LEVEL=0",
+        "-DBOARD_HAS_PSRAM",
+        "-DARDUINO_USB_MODE=0",
+        "-DARDUINO_USB_CDC_ON_BOOT=1",
+        "-DARDUINO_USB_MSC_ON_BOOT=0",
+        "-DARDUINO_USB_DFU_ON_BOOT=0",
+        "@C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/flags/defines",
+        "-IC:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware",
+        "-iprefix",
+        "C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/include/",
+        "@C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/flags/includes",
+        "-IC:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/qio_qspi/include",
+        "-IC:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\3.3.1\\cores\\esp32",
+        "-IC:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\3.3.1\\variants\\adafruit_qtpy_esp32s2",
+        "@C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build/build_opt.h",
+        "@C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build/file_opts",
+        "C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build\\sketch\\firmware.ino.cpp",
+        "-o",
+        "nul"
+      ]
+    }
+  },
+  {
+    "missing_include_h": "Adafruit_NeoPixel.h"
+  },
+  {
+    "added_include_path": "C:\\Users\\luthi\\Documents\\Arduino\\libraries\\Adafruit_NeoPixel"
+  },
+  {
+    "compile": {
+      "source_path": "C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build\\sketch\\firmware.ino.cpp",
+      "object_path": "C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build\\sketch\\firmware.ino.cpp.o",
+      "depfile_path": "C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build\\sketch\\firmware.ino.cpp.d"
+    },
+    "compile_task": {
+      "args": [
+        "C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp-x32\\2411/bin/xtensa-esp32s2-elf-g++",
+        "-c",
+        "@C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/flags/cpp_flags",
+        "-w",
+        "-Os",
+        "-Werror=return-type",
+        "-w",
+        "-x",
+        "c++",
+        "-E",
+        "-CC",
+        "-DF_CPU=240000000L",
+        "-DARDUINO=10607",
+        "-DARDUINO_ADAFRUIT_QTPY_ESP32S2",
+        "-DARDUINO_ARCH_ESP32",
+        "-DARDUINO_BOARD=\"ADAFRUIT_QTPY_ESP32S2\"",
+        "-DARDUINO_VARIANT=\"adafruit_qtpy_esp32s2\"",
+        "-DARDUINO_PARTITION_tinyuf2-partitions-4MB-noota",
+        "-DARDUINO_HOST_OS=\"windows\"",
+        "-DARDUINO_FQBN=\"esp32:esp32:adafruit_qtpy_esp32s2:UploadSpeed=921600,CDCOnBoot=cdc,MSCOnBoot=default,DFUOnBoot=default,UploadMode=cdc,CPUFreq=240,FlashFreq=80,FlashMode=qio,FlashSize=4M,PartitionScheme=tinyuf2_noota,DebugLevel=none,PSRAM=enabled,EraseFlash=none,ZigbeeMode=default\"",
+        "-DESP32=ESP32",
+        "-DCORE_DEBUG_LEVEL=0",
+        "-DBOARD_HAS_PSRAM",
+        "-DARDUINO_USB_MODE=0",
+        "-DARDUINO_USB_CDC_ON_BOOT=1",
+        "-DARDUINO_USB_MSC_ON_BOOT=0",
+        "-DARDUINO_USB_DFU_ON_BOOT=0",
+        "@C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/flags/defines",
+        "-IC:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware",
+        "-iprefix",
+        "C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/include/",
+        "@C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/flags/includes",
+        "-IC:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/qio_qspi/include",
+        "-IC:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\3.3.1\\cores\\esp32",
+        "-IC:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\3.3.1\\variants\\adafruit_qtpy_esp32s2",
+        "-IC:\\Users\\luthi\\Documents\\Arduino\\libraries\\Adafruit_NeoPixel",
+        "@C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build/build_opt.h",
+        "@C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build/file_opts",
+        "C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build\\sketch\\firmware.ino.cpp",
+        "-o",
+        "nul"
+      ]
+    }
+  },
+  {
+    "missing_include_h": ""
+  },
+  {
+    "compile": {
+      "source_path": "C:\\Users\\luthi\\Documents\\Arduino\\libraries\\Adafruit_NeoPixel\\Adafruit_NeoPixel.cpp",
+      "object_path": "C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build\\libraries\\Adafruit_NeoPixel\\Adafruit_NeoPixel.cpp.o",
+      "depfile_path": "C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build\\libraries\\Adafruit_NeoPixel\\Adafruit_NeoPixel.cpp.d"
+    },
+    "compile_task": {
+      "args": [
+        "C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp-x32\\2411/bin/xtensa-esp32s2-elf-g++",
+        "-c",
+        "@C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/flags/cpp_flags",
+        "-w",
+        "-Os",
+        "-Werror=return-type",
+        "-w",
+        "-x",
+        "c++",
+        "-E",
+        "-CC",
+        "-DF_CPU=240000000L",
+        "-DARDUINO=10607",
+        "-DARDUINO_ADAFRUIT_QTPY_ESP32S2",
+        "-DARDUINO_ARCH_ESP32",
+        "-DARDUINO_BOARD=\"ADAFRUIT_QTPY_ESP32S2\"",
+        "-DARDUINO_VARIANT=\"adafruit_qtpy_esp32s2\"",
+        "-DARDUINO_PARTITION_tinyuf2-partitions-4MB-noota",
+        "-DARDUINO_HOST_OS=\"windows\"",
+        "-DARDUINO_FQBN=\"esp32:esp32:adafruit_qtpy_esp32s2:UploadSpeed=921600,CDCOnBoot=cdc,MSCOnBoot=default,DFUOnBoot=default,UploadMode=cdc,CPUFreq=240,FlashFreq=80,FlashMode=qio,FlashSize=4M,PartitionScheme=tinyuf2_noota,DebugLevel=none,PSRAM=enabled,EraseFlash=none,ZigbeeMode=default\"",
+        "-DESP32=ESP32",
+        "-DCORE_DEBUG_LEVEL=0",
+        "-DBOARD_HAS_PSRAM",
+        "-DARDUINO_USB_MODE=0",
+        "-DARDUINO_USB_CDC_ON_BOOT=1",
+        "-DARDUINO_USB_MSC_ON_BOOT=0",
+        "-DARDUINO_USB_DFU_ON_BOOT=0",
+        "@C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/flags/defines",
+        "-IC:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware",
+        "-iprefix",
+        "C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/include/",
+        "@C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/flags/includes",
+        "-IC:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/qio_qspi/include",
+        "-IC:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\3.3.1\\cores\\esp32",
+        "-IC:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\3.3.1\\variants\\adafruit_qtpy_esp32s2",
+        "-IC:\\Users\\luthi\\Documents\\Arduino\\libraries\\Adafruit_NeoPixel",
+        "@C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build/build_opt.h",
+        "@C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build/file_opts",
+        "C:\\Users\\luthi\\Documents\\Arduino\\libraries\\Adafruit_NeoPixel\\Adafruit_NeoPixel.cpp",
+        "-o",
+        "nul"
+      ]
+    }
+  },
+  {
+    "missing_include_h": ""
+  },
+  {
+    "compile": {
+      "source_path": "C:\\Users\\luthi\\Documents\\Arduino\\libraries\\Adafruit_NeoPixel\\Adafruit_Neopixel_RP2.cpp",
+      "object_path": "C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build\\libraries\\Adafruit_NeoPixel\\Adafruit_Neopixel_RP2.cpp.o",
+      "depfile_path": "C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build\\libraries\\Adafruit_NeoPixel\\Adafruit_Neopixel_RP2.cpp.d"
+    },
+    "compile_task": {
+      "args": [
+        "C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp-x32\\2411/bin/xtensa-esp32s2-elf-g++",
+        "-c",
+        "@C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/flags/cpp_flags",
+        "-w",
+        "-Os",
+        "-Werror=return-type",
+        "-w",
+        "-x",
+        "c++",
+        "-E",
+        "-CC",
+        "-DF_CPU=240000000L",
+        "-DARDUINO=10607",
+        "-DARDUINO_ADAFRUIT_QTPY_ESP32S2",
+        "-DARDUINO_ARCH_ESP32",
+        "-DARDUINO_BOARD=\"ADAFRUIT_QTPY_ESP32S2\"",
+        "-DARDUINO_VARIANT=\"adafruit_qtpy_esp32s2\"",
+        "-DARDUINO_PARTITION_tinyuf2-partitions-4MB-noota",
+        "-DARDUINO_HOST_OS=\"windows\"",
+        "-DARDUINO_FQBN=\"esp32:esp32:adafruit_qtpy_esp32s2:UploadSpeed=921600,CDCOnBoot=cdc,MSCOnBoot=default,DFUOnBoot=default,UploadMode=cdc,CPUFreq=240,FlashFreq=80,FlashMode=qio,FlashSize=4M,PartitionScheme=tinyuf2_noota,DebugLevel=none,PSRAM=enabled,EraseFlash=none,ZigbeeMode=default\"",
+        "-DESP32=ESP32",
+        "-DCORE_DEBUG_LEVEL=0",
+        "-DBOARD_HAS_PSRAM",
+        "-DARDUINO_USB_MODE=0",
+        "-DARDUINO_USB_CDC_ON_BOOT=1",
+        "-DARDUINO_USB_MSC_ON_BOOT=0",
+        "-DARDUINO_USB_DFU_ON_BOOT=0",
+        "@C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/flags/defines",
+        "-IC:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware",
+        "-iprefix",
+        "C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/include/",
+        "@C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/flags/includes",
+        "-IC:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/qio_qspi/include",
+        "-IC:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\3.3.1\\cores\\esp32",
+        "-IC:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\3.3.1\\variants\\adafruit_qtpy_esp32s2",
+        "-IC:\\Users\\luthi\\Documents\\Arduino\\libraries\\Adafruit_NeoPixel",
+        "@C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build/build_opt.h",
+        "@C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build/file_opts",
+        "C:\\Users\\luthi\\Documents\\Arduino\\libraries\\Adafruit_NeoPixel\\Adafruit_Neopixel_RP2.cpp",
+        "-o",
+        "nul"
+      ]
+    }
+  },
+  {
+    "missing_include_h": ""
+  },
+  {
+    "compile": {
+      "source_path": "C:\\Users\\luthi\\Documents\\Arduino\\libraries\\Adafruit_NeoPixel\\esp.c",
+      "object_path": "C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build\\libraries\\Adafruit_NeoPixel\\esp.c.o",
+      "depfile_path": "C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build\\libraries\\Adafruit_NeoPixel\\esp.c.d"
+    },
+    "compile_task": {
+      "args": [
+        "C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp-x32\\2411/bin/xtensa-esp32s2-elf-g++",
+        "-c",
+        "@C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/flags/cpp_flags",
+        "-w",
+        "-Os",
+        "-Werror=return-type",
+        "-w",
+        "-x",
+        "c++",
+        "-E",
+        "-CC",
+        "-DF_CPU=240000000L",
+        "-DARDUINO=10607",
+        "-DARDUINO_ADAFRUIT_QTPY_ESP32S2",
+        "-DARDUINO_ARCH_ESP32",
+        "-DARDUINO_BOARD=\"ADAFRUIT_QTPY_ESP32S2\"",
+        "-DARDUINO_VARIANT=\"adafruit_qtpy_esp32s2\"",
+        "-DARDUINO_PARTITION_tinyuf2-partitions-4MB-noota",
+        "-DARDUINO_HOST_OS=\"windows\"",
+        "-DARDUINO_FQBN=\"esp32:esp32:adafruit_qtpy_esp32s2:UploadSpeed=921600,CDCOnBoot=cdc,MSCOnBoot=default,DFUOnBoot=default,UploadMode=cdc,CPUFreq=240,FlashFreq=80,FlashMode=qio,FlashSize=4M,PartitionScheme=tinyuf2_noota,DebugLevel=none,PSRAM=enabled,EraseFlash=none,ZigbeeMode=default\"",
+        "-DESP32=ESP32",
+        "-DCORE_DEBUG_LEVEL=0",
+        "-DBOARD_HAS_PSRAM",
+        "-DARDUINO_USB_MODE=0",
+        "-DARDUINO_USB_CDC_ON_BOOT=1",
+        "-DARDUINO_USB_MSC_ON_BOOT=0",
+        "-DARDUINO_USB_DFU_ON_BOOT=0",
+        "@C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/flags/defines",
+        "-IC:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware",
+        "-iprefix",
+        "C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/include/",
+        "@C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/flags/includes",
+        "-IC:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/qio_qspi/include",
+        "-IC:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\3.3.1\\cores\\esp32",
+        "-IC:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\3.3.1\\variants\\adafruit_qtpy_esp32s2",
+        "-IC:\\Users\\luthi\\Documents\\Arduino\\libraries\\Adafruit_NeoPixel",
+        "@C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build/build_opt.h",
+        "@C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build/file_opts",
+        "C:\\Users\\luthi\\Documents\\Arduino\\libraries\\Adafruit_NeoPixel\\esp.c",
+        "-o",
+        "nul"
+      ]
+    }
+  },
+  {
+    "missing_include_h": ""
+  },
+  {
+    "compile": {
+      "source_path": "C:\\Users\\luthi\\Documents\\Arduino\\libraries\\Adafruit_NeoPixel\\esp8266.c",
+      "object_path": "C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build\\libraries\\Adafruit_NeoPixel\\esp8266.c.o",
+      "depfile_path": "C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build\\libraries\\Adafruit_NeoPixel\\esp8266.c.d"
+    },
+    "compile_task": {
+      "args": [
+        "C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp-x32\\2411/bin/xtensa-esp32s2-elf-g++",
+        "-c",
+        "@C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/flags/cpp_flags",
+        "-w",
+        "-Os",
+        "-Werror=return-type",
+        "-w",
+        "-x",
+        "c++",
+        "-E",
+        "-CC",
+        "-DF_CPU=240000000L",
+        "-DARDUINO=10607",
+        "-DARDUINO_ADAFRUIT_QTPY_ESP32S2",
+        "-DARDUINO_ARCH_ESP32",
+        "-DARDUINO_BOARD=\"ADAFRUIT_QTPY_ESP32S2\"",
+        "-DARDUINO_VARIANT=\"adafruit_qtpy_esp32s2\"",
+        "-DARDUINO_PARTITION_tinyuf2-partitions-4MB-noota",
+        "-DARDUINO_HOST_OS=\"windows\"",
+        "-DARDUINO_FQBN=\"esp32:esp32:adafruit_qtpy_esp32s2:UploadSpeed=921600,CDCOnBoot=cdc,MSCOnBoot=default,DFUOnBoot=default,UploadMode=cdc,CPUFreq=240,FlashFreq=80,FlashMode=qio,FlashSize=4M,PartitionScheme=tinyuf2_noota,DebugLevel=none,PSRAM=enabled,EraseFlash=none,ZigbeeMode=default\"",
+        "-DESP32=ESP32",
+        "-DCORE_DEBUG_LEVEL=0",
+        "-DBOARD_HAS_PSRAM",
+        "-DARDUINO_USB_MODE=0",
+        "-DARDUINO_USB_CDC_ON_BOOT=1",
+        "-DARDUINO_USB_MSC_ON_BOOT=0",
+        "-DARDUINO_USB_DFU_ON_BOOT=0",
+        "@C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/flags/defines",
+        "-IC:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware",
+        "-iprefix",
+        "C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/include/",
+        "@C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/flags/includes",
+        "-IC:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/qio_qspi/include",
+        "-IC:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\3.3.1\\cores\\esp32",
+        "-IC:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\3.3.1\\variants\\adafruit_qtpy_esp32s2",
+        "-IC:\\Users\\luthi\\Documents\\Arduino\\libraries\\Adafruit_NeoPixel",
+        "@C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build/build_opt.h",
+        "@C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build/file_opts",
+        "C:\\Users\\luthi\\Documents\\Arduino\\libraries\\Adafruit_NeoPixel\\esp8266.c",
+        "-o",
+        "nul"
+      ]
+    }
+  },
+  {
+    "missing_include_h": ""
+  },
+  {
+    "compile": {
+      "source_path": "C:\\Users\\luthi\\Documents\\Arduino\\libraries\\Adafruit_NeoPixel\\kendyte_k210.c",
+      "object_path": "C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build\\libraries\\Adafruit_NeoPixel\\kendyte_k210.c.o",
+      "depfile_path": "C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build\\libraries\\Adafruit_NeoPixel\\kendyte_k210.c.d"
+    },
+    "compile_task": {
+      "args": [
+        "C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp-x32\\2411/bin/xtensa-esp32s2-elf-g++",
+        "-c",
+        "@C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/flags/cpp_flags",
+        "-w",
+        "-Os",
+        "-Werror=return-type",
+        "-w",
+        "-x",
+        "c++",
+        "-E",
+        "-CC",
+        "-DF_CPU=240000000L",
+        "-DARDUINO=10607",
+        "-DARDUINO_ADAFRUIT_QTPY_ESP32S2",
+        "-DARDUINO_ARCH_ESP32",
+        "-DARDUINO_BOARD=\"ADAFRUIT_QTPY_ESP32S2\"",
+        "-DARDUINO_VARIANT=\"adafruit_qtpy_esp32s2\"",
+        "-DARDUINO_PARTITION_tinyuf2-partitions-4MB-noota",
+        "-DARDUINO_HOST_OS=\"windows\"",
+        "-DARDUINO_FQBN=\"esp32:esp32:adafruit_qtpy_esp32s2:UploadSpeed=921600,CDCOnBoot=cdc,MSCOnBoot=default,DFUOnBoot=default,UploadMode=cdc,CPUFreq=240,FlashFreq=80,FlashMode=qio,FlashSize=4M,PartitionScheme=tinyuf2_noota,DebugLevel=none,PSRAM=enabled,EraseFlash=none,ZigbeeMode=default\"",
+        "-DESP32=ESP32",
+        "-DCORE_DEBUG_LEVEL=0",
+        "-DBOARD_HAS_PSRAM",
+        "-DARDUINO_USB_MODE=0",
+        "-DARDUINO_USB_CDC_ON_BOOT=1",
+        "-DARDUINO_USB_MSC_ON_BOOT=0",
+        "-DARDUINO_USB_DFU_ON_BOOT=0",
+        "@C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/flags/defines",
+        "-IC:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware",
+        "-iprefix",
+        "C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/include/",
+        "@C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/flags/includes",
+        "-IC:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\tools\\esp32-arduino-libs\\idf-release_v5.5-129cd0d2-v4\\esp32s2/qio_qspi/include",
+        "-IC:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\3.3.1\\cores\\esp32",
+        "-IC:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages\\esp32\\hardware\\esp32\\3.3.1\\variants\\adafruit_qtpy_esp32s2",
+        "-IC:\\Users\\luthi\\Documents\\Arduino\\libraries\\Adafruit_NeoPixel",
+        "@C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build/build_opt.h",
+        "@C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\build/file_opts",
+        "C:\\Users\\luthi\\Documents\\Arduino\\libraries\\Adafruit_NeoPixel\\kendyte_k210.c",
+        "-o",
+        "nul"
+      ]
+    }
+  },
+  {
+    "missing_include_h": ""
+  }
+]

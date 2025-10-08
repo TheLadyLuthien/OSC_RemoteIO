@@ -1,0 +1,9 @@
+{
+  "additionalFiles": "..\\..\\..,..\\..\\..",
+  "compiler.optimization_flags": "-Os",
+  "customBuildProperties": "",
+  "fqbn": "esp32:esp32:adafruit_qtpy_esp32s2:UploadSpeed=921600,CDCOnBoot=cdc,MSCOnBoot=default,DFUOnBoot=default,UploadMode=cdc,CPUFreq=240,FlashFreq=80,FlashMode=qio,FlashSize=4M,PartitionScheme=tinyuf2_noota,DebugLevel=none,PSRAM=enabled,EraseFlash=none,ZigbeeMode=default",
+  "hardwareFolders": "C:\\Users\\luthi\\AppData\\Local\\Arduino15\\packages",
+  "otherLibrariesFolders": "C:\\Users\\luthi\\Documents\\Arduino\\libraries",
+  "sketchLocation": "C:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware"
+}

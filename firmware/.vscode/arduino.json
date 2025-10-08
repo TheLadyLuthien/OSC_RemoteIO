@@ -1,6 +1,17 @@
 {
+  "port": "COM5",
+  "configuration": "UploadSpeed=921600,CDCOnBoot=cdc,MSCOnBoot=default,DFUOnBoot=default,UploadMode=cdc,CPUFreq=240,FlashFreq=80,FlashMode=qio,FlashSize=4M,PartitionScheme=tinyuf2_noota,DebugLevel=none,PSRAM=enabled,EraseFlash=none,ZigbeeMode=default",
+  "board": "esp32:esp32:adafruit_qtpy_esp32s2",
+  "sketch": "firmware.ino",
+  "monitorPortSettings": {
     "port": "COM5",
-    "configuration": "CDCOnBoot=cdc,MSCOnBoot=default,DFUOnBoot=default,UploadMode=cdc,PSRAM=enabled,PartitionScheme=tinyuf2_noota,CPUFreq=240,FlashMode=qio,FlashFreq=80,FlashSize=4M,UploadSpeed=921600,DebugLevel=none,EraseFlash=none,ZigbeeMode=default",
-    "board": "esp32:esp32:adafruit_qtpy_esp32s2",
-    "sketch": "firmware.ino"
+    "baudRate": 115200,
+    "lineEnding": "\r\n",
+    "dataBits": 8,
+    "parity": "none",
+    "stopBits": "one"
+  },
+  "optimize_for_debug": false,
+  "configurationRequired": true,
+  "programmer": "esptool"
 }

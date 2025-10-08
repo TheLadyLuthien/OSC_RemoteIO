@@ -1,7 +1,0 @@
-main.py
-device.py
-
-settings.toml
-
-connection.py
-defs.py

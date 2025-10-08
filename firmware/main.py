@@ -1,6 +1,6 @@
 
 from device import DEVICE_CONFIG
-from src.defs import *
+from defs import *
 
 CONNECTION = DEVICE_CONFIG.createConnection()
 

@@ -1,4 +1,7 @@
 main.py
 device.py
+
 settings.toml
-src/*.py
+
+connection.py
+defs.py

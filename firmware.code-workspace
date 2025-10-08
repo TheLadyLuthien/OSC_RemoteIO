@@ -3,5 +3,22 @@
 		{
 			"path": "firmware"
 		}
-	]
+    ],
+    "settings": {
+        "circuitpythonsync.cpbaseversion": "10",
+        "circuitpythonsync.cpfullversion": "10.0.0",
+        "circuitpythonsync.curlibtag": "20251004",
+        "python.analysis.extraPaths": [
+            "c:\\Users\\luthi\\AppData\\Roaming\\Code\\User\\globalStorage\\padgettholdings.circuitpythonsync\\stubs\\circuitpython_stubs-10.0.0\\board_definitions\\adafruit_qtpy_esp32s2",
+            "${workspaceFolder}/libArchive/libstubs",
+            "c:\\Users\\luthi\\Code\\OSC_RemoteIO\\firmware\\libArchive\\libstubs",
+            "${workspaceFolder}/device.py",
+            "${workspaceFolder}/src/",
+            "${workspaceFolder}/lib/",
+            "c:\\Users\\luthi\\AppData\\Roaming\\Code\\User\\globalStorage\\padgettholdings.circuitpythonsync\\stubs\\circuitpython_stubs-10.0.0"
+        ],
+        "circuitpythonsync.doNotShowWelcome": true,
+        "circuitpythonsync.drivepath": "D:",
+        "circuitpythonsync.cpboardname": "adafruit_qtpy_esp32s2"
+    }
 }

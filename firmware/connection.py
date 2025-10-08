@@ -1,4 +1,3 @@
-from abc import ABC, abstractmethod
 from defs import *
 import microosc
 import socketpool
@@ -6,7 +5,7 @@ import adafruit_httpserver as httpserver
 
 import wifi
 
-class Connection(ABC):
+class Connection():
     connected: bool
     socketPool: socketpool.SocketPool
     apiServer: httpserver.Server
@@ -14,14 +13,11 @@ class Connection(ABC):
     oscServer: microosc.OSCServer
 
 
-    # oscServer: microosc
-    @abstractmethod
     def connect(self) -> bool:
-        pass
+        raise NotImplementedError
 
-    @abstractmethod
     def initSocketpool(self) -> None:
-        pass
+        raise NotImplementedError
 
     def initServers(self) -> None:
         self.oscServer = microosc.OSCServer(self.socketPool, OSC_SERVER_UDP_HOST, OSC_SERVER_UDP_PORT)

@@ -1,5 +1,5 @@
-from src.connection import Connection, WifiConnection
-from src.defs import IDeviceConfig, NetworkMode
+from connection import Connection, WifiConnection
+from defs import IDeviceConfig, NetworkMode
 from os import getenv
 
 DEFAULT_SSID = ""

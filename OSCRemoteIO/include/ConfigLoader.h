@@ -6,19 +6,21 @@ template <typename T>
 class ConfigLoader
 {
 private:
-
+    const char* m_namespace;
 private:
-    
+
     T* m_loadedValue;
 
 public:
     const T* getLoadedConfig()
     {
-        prefs.
+        prefs.begin(m_namespace);
+        
     }
 public:
-    ConfigLoader()
+    ConfigLoader(const char* namespace):
+        m_namespace(namespace)
     {
+
     }
-    ~ConfigLoader(){}
 };

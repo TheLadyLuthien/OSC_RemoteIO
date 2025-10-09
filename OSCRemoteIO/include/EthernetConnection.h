@@ -1,16 +1,17 @@
+#ifdef ETHERNET
+
 #include "connection.h"
 #include <SPI.h>
 #include <Ethernet.h>
 #include <EthernetUdp.h>
 
-#ifdef ETHERNET
 
-class EthernetConnection : Connection
+class EthernetConnection : public Connection
 {
 private:
     /* data */
 public:
-    void connect() override
+    bool connect() override
     {
         Ethernet.init(BOARD_PIN_NET_CS);
 

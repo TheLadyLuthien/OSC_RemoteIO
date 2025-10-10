@@ -8,7 +8,7 @@ private:
     const char* m_ssid;
     const char* m_pass;
 
-    WiFiClient m_activeClient;
+    WiFiClient m_activeHttpClient;
 
 public:
     bool connect() override
@@ -29,11 +29,7 @@ public:
         if (WiFi.status() == WL_CONNECTED)
         {
             this->updateStatus(Connection::NetworkStatus::CONNECTED);
-            Serial.println("Connected to WiFi");
-            
-            this->m_deviceIp = WiFi.localIP();
-            Serial.println(m_deviceIp);
-
+            onSuccessfulConnect();
             return true;
         }
         else
@@ -43,22 +39,33 @@ public:
         }
     }
 
-    void initServer() override
+    void onSuccessfulConnect()
     {
-        m_pServer = new WiFiServer(SERVER_PORT, 1);
-        m_pServer->begin();
+        Serial.println("Connected to WiFi");
+
+        m_deviceIp = WiFi.localIP();
+        Serial.println(m_deviceIp);
+            
+        m_pUdp->begin(m_udpListenPort);
+        m_pHttpServer->begin();
     }
 
-    bool checkForNewClientConnection()
+    void initServers() override
     {
-        if (m_activeClient)
+        m_pHttpServer = new WiFiServer(SERVER_PORT, 1);
+        m_pOsc = new MicroOscUdp<OSC_PACKAGE_BITS>(m_pUdp, m_oscDestinationIp, m_oscDestinationPort);
+    }
+
+    bool checkForNewHttpClientConnection()
+    {
+        if (m_activeHttpClient)
         {
-            m_activeClient.stop();
+            m_activeHttpClient.stop();
         }
 
-        m_activeClient = reinterpret_cast<WiFiServer*>(m_pServer)->available();
+        m_activeHttpClient = reinterpret_cast<WiFiServer*>(m_pHttpServer)->available();
 
-        if (!m_activeClient)
+        if (!m_activeHttpClient)
         {
             // no client
             return false;
@@ -68,15 +75,15 @@ public:
         return true;
     }
 
-    Client* getActiveClient() override
+    Client* getActiveHttpClient() override
     {
-        if (!(this->m_activeClient))
+        if (!(this->m_activeHttpClient))
         {
             return nullptr;
         }
         else
         {
-            return &this->m_activeClient;
+            return &this->m_activeHttpClient;
         }
     }
 
@@ -90,7 +97,7 @@ public:
         m_ssid(ssid),
         m_pass(pass)
     {
-        
+        this->m_pUdp = new WiFiUDP();
     }
 };
 

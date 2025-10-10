@@ -41,13 +41,23 @@ void setup()
 
     WifiConnection* connection = new WifiConnection(5000, mac, "LaggyNet", "RabbitEars.");
 
+    connection->initServers();
+
+    connection->configureHttpApiEndpoints();
+    connection->setOscMessageHandler([](MicroOscMessage& receivedOscMessage){
+        // if (receivedOscMessage.checkOscAddress("/test"))
+        // {
+            Serial.println("OSC Message recieved!");
+        // }
+    });
+
     connection->connect();
-    connection->initServer();
-    connection->configureApiEndpoints();
+    
 
     while (true)
     {
-        connection->processServer();
+        connection->processOscInbound();
+        connection->processHttpServer();
     }
 }
 

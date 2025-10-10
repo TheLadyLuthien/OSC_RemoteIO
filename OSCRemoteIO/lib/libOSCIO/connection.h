@@ -17,19 +17,26 @@ public:
 
 private:
     NetworkStatus m_status = NetworkStatus::NOT_INITIALIZED;
+    
+protected:
+    IPAddress m_oscDestinationIp;
+    unsigned int m_oscDestinationPort;
+    
+    UDP* m_pUdp; 
+    MicroOscUdp<1024>* m_pOsc;
+
+    MicroOsc::tOscCallbackFunction m_pOscMessageHandler = nullptr;
 
 protected:
-    const int m_udpListenPort;
+    const unsigned int m_udpListenPort;
     const uint8_t* m_macAddr;
 
-    Server* m_pServer;
+    Server* m_pHttpServer;
     ApiHandler* m_pApiHandler;
-    UDP* m_pUdp; 
     
     IPAddress m_deviceIp;
     IPAddress m_deviceFallbackIp;
 
-    MicroOscUdp<1024>* m_pOsc;
 
     void updateStatus(NetworkStatus status)
     {
@@ -38,37 +45,51 @@ protected:
     
 public:
     virtual bool connect() = 0;
-    virtual void initServer() = 0;
+    virtual void initServers() = 0;
 
     // returns `true` if a new client was activated
-    virtual bool checkForNewClientConnection() = 0;
+    virtual bool checkForNewHttpClientConnection() = 0;
 
     // returns `nullptr` is ther is no active client
-    virtual Client* getActiveClient() = 0;
-
-
-    virtual void configureApiEndpoints()
+    virtual Client* getActiveHttpClient() = 0;
+    
+    virtual void configureHttpApiEndpoints()
     {
         this->m_pApiHandler->get("/", [](Request& req, Response& res){
             res.print("Hello Network");
+            Serial.println("Hello network!!!");
         });
     }
-
-    // returns `true` if a request was processed this cycle
-    bool processServer()
+    
+    void setOscMessageHandler(MicroOsc::tOscCallbackFunction pHandler)
     {
-        if(this->checkForNewClientConnection())
+        this->m_pOscMessageHandler = pHandler;
+    }
+    
+    // returns `true` if a request was processed this cycle
+    bool processHttpServer()
+    {
+        if(this->checkForNewHttpClientConnection())
         {
-            Client* pClient = this->getActiveClient();
+            Client* pClient = this->getActiveHttpClient();
         
             this->m_pApiHandler->process(pClient);
             
             pClient->stop();
+            return true;
         }
 
-        return true;
+        return false;
     }
-    
+
+    void processOscInbound()
+    {
+        if (m_pOscMessageHandler != nullptr)
+        {
+            m_pOsc->onOscMessageReceived(m_pOscMessageHandler);
+        }
+    }
+
     NetworkStatus getStatus()
     {
         return this->m_status;

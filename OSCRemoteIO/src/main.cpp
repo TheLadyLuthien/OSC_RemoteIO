@@ -1,5 +1,7 @@
 #include <Adafruit_NeoPixel.h>
 #include "WifiConnection.h"
+#include "PortManager.h"
+#include "BasicExposedDualIOPortBehavior.h"
 
 // How many internal neopixels do we have? some boards have more than one!
 #define NUMPIXELS 1
@@ -38,6 +40,18 @@ void setup()
     delay(500); // wait half a second
 
     byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
+
+    PortManager portManager;
+
+    DualPinPort* pPort = new DualPinPort(
+        1,
+        0,
+        1
+    );
+
+    portManager.registerPort(pPort);
+
+    pPort->setBehaviorProfile(new BasicExposedDualIOPortBehavior(pPort));
 
     WifiConnection* connection = new WifiConnection(5000, mac, "LaggyNet", "RabbitEars.");
 

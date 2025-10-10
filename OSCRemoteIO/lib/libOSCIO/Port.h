@@ -1,27 +1,29 @@
 #include <Arduino.h>
-
-enum class PortIoMode
-{
-    IO_NOT_SUPPORTED,
-    IO_ENABLED,
-    IO_DISABLED
-};
+#include "PortBehaviorProfile.h"
 
 class Port
 {
-private:
+protected:
     const unsigned int m_portId;
+
+    bool m_isEnabled = false;
     
 public:
-    virtual PortIoMode getInputMode()
+    virtual void update()
     {
-        return PortIoMode::IO_NOT_SUPPORTED;
+
     }
-    virtual PortIoMode getOutputMode()
+
+    unsigned int getPortId()
     {
-        return PortIoMode::IO_NOT_SUPPORTED;
+        return m_portId;
     }
-    
+
+    bool isEnabled()
+    {
+        return m_isEnabled;
+    }
+
 protected:
     Port(int portId):
         m_portId(portId)
@@ -29,32 +31,75 @@ protected:
 
     }
 
-
 public:
-    static Port createUninitializedPort(unsigned int portId)
-    {
-        return new Port(portId);
-    }
-
     ~Port(){};
 };
 
-class SimpleFullIoPort : public Port
+class DualPinPort : public Port
 {
-protected:
-    const uint8_t m_inputPin;
-    const uint8_t m_outputPin;
+public:
+    class BehaviorProfile : public PortBehaviorProfile<DualPinPort>
+    {
+    protected:
+        BehaviorProfile(DualPinPort* pPort):
+            PortBehaviorProfile(pPort)
+        {
 
-    bool m_isInputPullup;
+        }
+    };
+
+protected:
+    BehaviorProfile* m_pBehaviorProfile = nullptr;
+
+    uint8_t m_pinAMode;
+    uint8_t m_pinBMode;
+    
 
 public:
-    SimpleFullIoPort(int portId, uint8_t inputPin, uint8_t outputPin, bool isInputPullup):
-        Port(portId),
-        m_inputPin(inputPin),
-        m_outputPin(outputPin),
-        m_isInputPullup(isInputPullup)
+    const uint8_t m_pinA;
+    const uint8_t m_pinB;
+
+    void setPinAMode(uint8_t mode)
     {
-        pinMode(m_inputPin, m_isInputPullup ? INPUT_PULLUP : INPUT);
-        pinMode(m_outputPin, OUTPUT);
+        m_pinAMode = mode;
+        pinMode(m_pinA, mode);
+    }
+    void setPinBMode(uint8_t mode)
+    {
+        m_pinBMode = mode;
+        pinMode(m_pinB, mode);
+    }
+    void setPinModes(uint8_t a, uint8_t b)
+    {
+        setPinAMode(a);
+        setPinBMode(b);
+    }
+
+    void setBehaviorProfile(BehaviorProfile* pProfile)
+    {
+        if (m_pBehaviorProfile != nullptr)
+        {
+            // destroy old profile, nolonger eneded
+            delete m_pBehaviorProfile;
+        }
+
+        m_pBehaviorProfile = pProfile;
+
+        m_pBehaviorProfile->init();
+    }
+
+    void update()
+    {
+        if (m_pBehaviorProfile != nullptr)
+        {
+            m_pBehaviorProfile->update();
+        }
+    }
+public:
+    DualPinPort(int portId, uint8_t pinA, uint8_t pinB):
+        Port(portId),
+        m_pinA(pinA),
+        m_pinB(pinB)
+    {
     }
 };

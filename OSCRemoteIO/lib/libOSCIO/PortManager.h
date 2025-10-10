@@ -1,20 +1,47 @@
 #include <Arduino.h>
 #include "Port.h"
 
-#define MAX_PORTS 64
-
 class PortManager
 {
 private:
-    const unsigned int m_portCount;
+    Port* m_pPorts[BOARD_PORT_COUNT];
 
-    Vector<Port> m_ports;
-    /* data */
+    bool m_locked = false;
+
 public:
-    PortManager(int portCount):
-        m_portCount(portCount)
+    bool registerPort(Port* pPort)
     {
-        m_ports = new Port[portCount];
+        unsigned int portId = pPort->getPortId();
+        if ((m_locked) ||
+            (portId > BOARD_PORT_COUNT) ||
+            (m_pPorts[portId - 1] != nullptr))
+        {
+            return false;
+        }
+
+        m_pPorts[portId - 1] = pPort;
+        return true;
+    }
+
+    void freeze()
+    {
+        m_locked = true;
+    }
+
+    void process()
+    {
+        for (size_t i = 0; i < BOARD_PORT_COUNT; i++)
+        {
+            Port* pPort = m_pPorts[i];
+            if ((pPort != nullptr) && pPort->isEnabled())
+            {
+                pPort->update();
+            }
+        }
+    }
+
+    PortManager()
+    {
     }
     ~PortManager(){}
 };

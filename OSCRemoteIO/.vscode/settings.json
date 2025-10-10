@@ -1,0 +1,17 @@
+{
+    "files.associations": {
+        "*.ejs": "html",
+        "*.rc": "ini",
+        "*.build": "dart",
+        "manifest": "xml",
+        "*.bml": "xml",
+        "buildinfo": "plaintext",
+        "*.db": "json",
+        "*.config": "ini",
+        "*.texml": "json",
+        "*.toml": "toml",
+        "*.fg": "json",
+        "algorithm": "cpp",
+        "new": "cpp"
+    }
+}

@@ -1,4 +1,5 @@
-#ifdef WIFI
+#ifdef BOARD_NET_WIFI
+
 #include "Connection.h"
 #include <WiFi.h>
 

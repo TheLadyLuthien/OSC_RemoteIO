@@ -61,7 +61,6 @@ public:
         {
             Client* pClient = this->getActiveClient();
         
-            Serial.println("got here 64");
             this->m_pApiHandler->process(pClient);
             
             pClient->stop();

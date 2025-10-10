@@ -52,7 +52,6 @@ void setup()
     });
 
     connection->connect();
-    
 
     while (true)
     {

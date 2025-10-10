@@ -18,25 +18,32 @@ public:
 private:
     NetworkStatus m_status = NetworkStatus::NOT_INITIALIZED;
     
+    //////////////   OSC  ///////////////
 protected:
-    IPAddress m_oscDestinationIp;
-    unsigned int m_oscDestinationPort;
+    const unsigned int m_udpListenPort;
     
     UDP* m_pUdp; 
     MicroOscUdp<1024>* m_pOsc;
 
+    IPAddress m_oscDestinationIp;
+    unsigned int m_oscDestinationPort;
+    
+
     MicroOsc::tOscCallbackFunction m_pOscMessageHandler = nullptr;
 
+    ////////////// HTTP Server ///////////////
 protected:
-    const unsigned int m_udpListenPort;
-    const uint8_t* m_macAddr;
 
     Server* m_pHttpServer;
     ApiHandler* m_pApiHandler;
-    
+
+    ////////////// Network Config ///////////////
+protected:
+
     IPAddress m_deviceIp;
     IPAddress m_deviceFallbackIp;
 
+    const uint8_t* m_macAddr;
 
     void updateStatus(NetworkStatus status)
     {

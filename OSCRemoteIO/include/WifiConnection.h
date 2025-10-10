@@ -2,12 +2,14 @@
 #include "Connection.h"
 #include <WiFi.h>
 
-
 class WifiConnection : public Connection
 {
 private:
     const char* m_ssid;
     const char* m_pass;
+
+    WiFiClient m_activeClient;
+
 public:
     bool connect() override
     {
@@ -41,47 +43,39 @@ public:
         }
     }
 
-    void test()
+    void initServer() override
     {
-        Serial.println("Testing mode enabled");
-        while (true)
+        m_pServer = new WiFiServer(SERVER_PORT, 1);
+    }
+
+    bool checkForNewClientConnection()
+    {
+        if (m_activeClient)
         {
-            WiFiClient client = reinterpret_cast<WiFiServer*>(m_pServer)->available();
-            if (client == true)
-            {
-                bool currentLineIsBlank = true;
+            m_activeClient.stop();
+        }
 
-                while (client.connected())
-                {
+        m_activeClient = reinterpret_cast<WiFiServer*>(m_pServer)->available();
 
-                    if (client.available())
-                    {
+        if (!m_activeClient)
+        {
+            // no client
+            return false;
+        }
 
+        // new client w/ data is available
+        return true;
+    }
 
-                        char c = client.read();
-
-
-                        Serial.write(c);
-
-
-                        // if you've gotten to the end of the line (received a newline
-
-
-                        // character) and the line is blank, the http request has ended,
-
-
-                        // so you can send a reply
-
-
-                        if (c == '\n' && currentLineIsBlank) {
-                            client.println("testing!! Woot Woot!");
-        
-                            delay(1);
-                            client.stop();
-                        }
-                    }
-                }
-            }
+    Client* getActiveClient() override
+    {
+        if (!(this->m_activeClient))
+        {
+            return nullptr;
+        }
+        else
+        {
+            return &this->m_activeClient;
         }
     }
 
@@ -95,7 +89,7 @@ public:
         m_ssid(ssid),
         m_pass(pass)
     {
-        m_pServer = new WiFiServer(SERVER_PORT, 1);
+        
     }
 };
 

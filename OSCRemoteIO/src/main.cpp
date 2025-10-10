@@ -43,8 +43,12 @@ void setup()
 
     connection->connect();
     connection->initServer();
-    connection->test();
+    connection->configureApiEndpoints();
 
+    while (true)
+    {
+        connection->processServer();
+    }
 }
 
 // the loop routine runs over and over again forever:

@@ -46,6 +46,7 @@ public:
     void initServer() override
     {
         m_pServer = new WiFiServer(SERVER_PORT, 1);
+        m_pServer->begin();
     }
 
     bool checkForNewClientConnection()

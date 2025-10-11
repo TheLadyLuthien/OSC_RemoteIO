@@ -2,6 +2,7 @@
 #include "WifiConnection.h"
 #include "Config.h"
 #include "DeviceStatus.h"
+#include "behavior/ArmableTriggerPortBehavior.h"
 
 class Core
 {
@@ -67,7 +68,7 @@ public:
         );
         m_pPortManager->registerPort(pPort);
 
-        pPort->setBehaviorProfile(new BasicExposedDualIOPortBehavior(pPort));
+        pPort->setBehaviorProfile(new ArmableTriggerPortBehavior(pPort));
 
         m_pConnection->initServers();
         

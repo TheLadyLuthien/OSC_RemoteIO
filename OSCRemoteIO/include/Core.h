@@ -1,17 +1,22 @@
 #include "libOSCIO.h"
 #include "WifiConnection.h"
 #include "Config.h"
+#include "DeviceStatus.h"
 
 class Core
 {
 private:
     static Core* s_pInstance;
 
+    DeviceStatus m_deviceStatus;
+
 public:
     PortManager* m_pPortManager;
     Connection* m_pConnection;
 
+    StatusLightController* m_pStatusLightController;
     DeviceConfig m_config;
+
 
     static void handleOscMessage(MicroOscMessage& msg)
     {
@@ -32,6 +37,9 @@ public:
     Core()
     {
         s_pInstance = this;
+
+        m_deviceStatus = DeviceStatus::STARTING_UP;
+        m_pStatusLightController = new StatusLightController(&m_deviceStatus, BOARD_STATUS_LIGHT_PIN, BOARD_STATUS_LIGHT_COUNT, BOARD_STATUS_LIGHT_NEOTYPE);
     }
 
     static Core* getInstance()
@@ -69,9 +77,12 @@ public:
 
     void begin()
     {
+        m_deviceStatus = DeviceStatus::CONNECTING;
+        
         m_pPortManager->freeze();
-
         m_pConnection->connect();
+
+        m_deviceStatus = DeviceStatus::READY;
     }
 
     void process()
@@ -80,5 +91,7 @@ public:
         
         m_pConnection->processOscInbound();
         m_pConnection->processHttpServer();
+        
+        m_pStatusLightController->process();
     }
 };

@@ -1,7 +1,8 @@
-#ifndef I_OSC_MESSAGE_HANDLER
-#define I_OSC_MESSAGE_HANDLER
+#ifndef I_OSC_MESSAGE_HANDLER_DEFINED
+#define I_OSC_MESSAGE_HANDLER_DEFINED
 
 #include <MicroOscMessage.h>
+#include <MicroOsc.h>
 #include <Arduino.h>
 
 class IOscMessageHandler

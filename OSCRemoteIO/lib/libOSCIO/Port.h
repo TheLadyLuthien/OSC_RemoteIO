@@ -4,6 +4,8 @@
 #include <Arduino.h>
 #include "PortBehaviorProfile.h"
 
+class PortManager;
+
 class Port : public IOscMessageHandler
 {
 protected:

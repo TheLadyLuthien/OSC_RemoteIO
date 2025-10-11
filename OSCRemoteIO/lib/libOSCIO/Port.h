@@ -7,6 +7,7 @@
 class Port : public IOscMessageHandler
 {
 protected:
+    PortManager* m_pPortManager;
     const unsigned int m_portId;
 
     bool m_isEnabled = false;
@@ -25,6 +26,16 @@ public:
     bool isEnabled()
     {
         return m_isEnabled;
+    }
+
+    void onRegister(PortManager* pPortManager)
+    {
+        m_pPortManager = pPortManager;
+    }
+
+    PortManager* getPortManager()
+    {
+        return m_pPortManager;
     }
 
 protected:
@@ -57,7 +68,6 @@ protected:
     uint8_t m_pinAMode;
     uint8_t m_pinBMode;
     
-
 public:
     const uint8_t m_pinA;
     const uint8_t m_pinB;
@@ -87,7 +97,7 @@ public:
         }
 
         m_pBehaviorProfile = pProfile;
-
+        
         m_pBehaviorProfile->init();
     }
 

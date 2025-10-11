@@ -2,4 +2,4 @@
 #include "Port.h"
 #include "PortBehaviorProfile.h"
 #include "PortManager.h"
-#include "BasicExposedDualIOPortBehavior.h"
+#include "behavior/BasicExposedDualIOPortBehavior.h"

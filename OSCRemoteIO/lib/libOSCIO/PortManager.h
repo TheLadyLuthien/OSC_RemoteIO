@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include "Port.h"
+#include "Connection.h"
 #include "IOscMessageHandler.h"
 
 class PortManager : public IOscMessageHandler
@@ -8,6 +9,8 @@ private:
     Port* m_ports[BOARD_PORT_COUNT];
 
     bool m_locked = false;
+
+    Connection* m_pConnection;
 
 public:
     bool registerPort(Port* pPort)
@@ -33,6 +36,9 @@ public:
         }
 
         m_ports[portId - 1] = pPort;
+
+        pPort->onRegister(this);
+
         return true;
     }
 
@@ -78,7 +84,13 @@ public:
         }
     }
 
-    PortManager()
+    Connection* getConnection()
+    {
+        return m_pConnection;
+    }
+
+    PortManager(Connection* pConnection):
+        m_pConnection(pConnection)
     {
     }
     ~PortManager(){}

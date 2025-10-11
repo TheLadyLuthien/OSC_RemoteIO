@@ -7,8 +7,8 @@ class Core
 private:
     static Core* s_pInstance;
 
-protected:
-    PortManager* m_pPortManager = new PortManager();
+public:
+    PortManager* m_pPortManager;
     Connection* m_pConnection;
 
     DeviceConfig m_config;
@@ -34,6 +34,11 @@ public:
         s_pInstance = this;
     }
 
+    static Core* getInstance()
+    {
+        return s_pInstance;
+    }
+
     void setConfig(DeviceConfig& deviceConfig)
     {
         m_config = deviceConfig;
@@ -45,13 +50,16 @@ public:
         m_pConnection = new WifiConnection(m_config.listenPort, m_config.macAddr, m_config.ssid, m_config.pass);
         #endif
 
+        m_pPortManager = new PortManager(m_pConnection);
+
         DualPinPort* pPort = new DualPinPort(
             1,
             A0,
             A1
         );
-        pPort->setBehaviorProfile(new BasicExposedDualIOPortBehavior(pPort));
         m_pPortManager->registerPort(pPort);
+
+        pPort->setBehaviorProfile(new BasicExposedDualIOPortBehavior(pPort));
 
         m_pConnection->initServers();
         

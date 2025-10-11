@@ -1,5 +1,10 @@
+#ifndef PORT_BEHAVIOR_DEFINED
+#define PORT_BEHAVIOR_DEFINED
+
+#include "IOscMessageHandler.h"
+
 template <typename T>
-class PortBehaviorProfile
+class PortBehaviorProfile : public IOscMessageHandler
 {
 protected:
     T* m_pPort;
@@ -16,3 +21,5 @@ protected:
     }
     ~PortBehaviorProfile(){}
 };
+
+#endif

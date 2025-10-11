@@ -12,6 +12,7 @@
         "*.toml": "toml",
         "*.fg": "json",
         "algorithm": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "random": "cpp"
     }
 }

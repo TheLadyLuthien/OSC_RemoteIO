@@ -1,3 +1,6 @@
+#ifndef CONNECTION_DEFINED
+#define CONNECTION_DEFINED
+
 #include <MicroOscUdp.h>
 #include <aWOT.h>
 
@@ -121,4 +124,4 @@ public:
 };
 
 
-
+#endif

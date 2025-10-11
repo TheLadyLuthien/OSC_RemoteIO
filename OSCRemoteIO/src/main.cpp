@@ -1,7 +1,6 @@
 #include <Adafruit_NeoPixel.h>
-#include "WifiConnection.h"
-#include "PortManager.h"
-#include "BasicExposedDualIOPortBehavior.h"
+#include "Core.h"
+
 
 // How many internal neopixels do we have? some boards have more than one!
 #define NUMPIXELS 1
@@ -40,45 +39,26 @@ void setup()
     delay(500); // wait half a second
 
     byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
+    DeviceConfig config {
+        5000,
+        mac,
+        "LaggyNet",
+        "RabbitEars."
+    };
+    
+    Core* core = new Core();
+    core->setConfig(config);
 
-    PortManager portManager;
-
-    DualPinPort* pPort = new DualPinPort(
-        1,
-        0,
-        1
-    );
-
-    portManager.registerPort(pPort);
-
-    pPort->setBehaviorProfile(new BasicExposedDualIOPortBehavior(pPort));
-
-    WifiConnection* connection = new WifiConnection(5000, mac, "LaggyNet", "RabbitEars.");
-
-    connection->initServers();
-
-    connection->configureHttpApiEndpoints();
-    connection->setOscMessageHandler([](MicroOscMessage& receivedOscMessage){
-        // if (receivedOscMessage.checkOscAddress("/test"))
-        // {
-            Serial.println("OSC Message recieved!");
-        // }
-    });
-
-    connection->connect();
-
+    core->init();
+    core->begin();
+    
     while (true)
     {
-        connection->processOscInbound();
-        connection->processHttpServer();
+        core->process();
     }
 }
 
 // the loop routine runs over and over again forever:
 void loop()
 {
-    while (true)
-    {
-        delay(5000);
-    }
 }

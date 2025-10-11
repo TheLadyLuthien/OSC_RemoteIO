@@ -1,7 +1,10 @@
+#ifndef PORT_DEFINED
+#define PORT_DEFINED
+
 #include <Arduino.h>
 #include "PortBehaviorProfile.h"
 
-class Port
+class Port : public IOscMessageHandler
 {
 protected:
     const unsigned int m_portId;
@@ -88,11 +91,19 @@ public:
         m_pBehaviorProfile->init();
     }
 
-    void update()
+    void update() override
     {
         if (m_pBehaviorProfile != nullptr)
         {
             m_pBehaviorProfile->update();
+        }
+    }
+
+    void handleOscMessage(String remainingPath, MicroOscMessage& msg) override
+    {
+        if (m_pBehaviorProfile != nullptr)
+        {
+            m_pBehaviorProfile->handleOscMessage(remainingPath, msg);
         }
     }
 public:
@@ -101,5 +112,8 @@ public:
         m_pinA(pinA),
         m_pinB(pinB)
     {
+        m_isEnabled = true;
     }
 };
+
+#endif
